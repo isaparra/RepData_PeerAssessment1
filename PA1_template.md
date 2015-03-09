@@ -58,7 +58,7 @@ hist(res$total_steps,xlab="Total number of steps taken by day",main="Histogram o
 dev.off()
 ```
 
-![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
+![plot of chunk plot1.png](figure/plot1.png-1.png) 
 
 ```
 ## RStudioGD 
@@ -71,7 +71,7 @@ The histogram
 hist(res$total_steps,xlab="Total number of steps taken by day",main="Histogram of the steps by day")
 ```
 
-![plot of chunk unnamed-chunk-5](figure/unnamed-chunk-5-1.png) 
+![plot of chunk unnamed-chunk-4](figure/unnamed-chunk-4-1.png) 
 
 3. Mean and median of the total number of steps taken per day.
   
@@ -133,7 +133,7 @@ plot(res2$interval, res2$mean, type="l", ylab="mean steps", xlab="5-minute inter
 dev.off()
 ```
 
-![plot of chunk unnamed-chunk-7](figure/unnamed-chunk-7-1.png) 
+![plot of chunk plot2.png](figure/plot2.png-1.png) 
 
 ```
 ## RStudioGD 
@@ -143,6 +143,8 @@ dev.off()
 ```r
 plot(res2$interval, res2$mean, type="l", ylab="mean steps", xlab="5-minute interval")
 ```
+
+![plot of chunk plot2.png](figure/plot2.png-2.png) 
 
 2. Which 5-minute interval, on average across all the days in the dataset, contains the maximum number of steps?
 
@@ -263,7 +265,7 @@ hist(res4$total_steps,xlab="Total number of steps taken by day",main="Histogram 
 dev.off()
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-1.png) 
+![plot of chunk plot3.png](figure/plot3.png-1.png) 
 
 ```
 ## RStudioGD 
@@ -274,7 +276,7 @@ dev.off()
 hist(res4$total_steps,xlab="Total number of steps taken by day",main="Histogram of the steps by day (imputing missing values)")
 ```
 
-![plot of chunk unnamed-chunk-12](figure/unnamed-chunk-12-2.png) 
+![plot of chunk plot3.png](figure/plot3.png-2.png) 
 
 **Are there differences in activity patterns between weekdays and weekends?**
 
@@ -337,6 +339,7 @@ res5
 ## ..      ...     ...         ...
 ```
 
+
 ```r
 library(lattice)
 png(filename ="plot4.png")
@@ -344,7 +347,7 @@ xyplot(res5$mean ~ res5$interval | res5$dayweek ,layout=c(1,2), type="l", ylab="
 dev.off()
 ```
 
-![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-1.png) 
+![plot of chunk plot4.png](figure/plot4.png-1.png) 
 
 ```
 ## RStudioGD 
@@ -355,4 +358,4 @@ dev.off()
 xyplot(res5$mean ~ res5$interval | res5$dayweek ,layout=c(1,2), type="l", ylab="Number of steps", xlab="Interval")
 ```
 
-![plot of chunk unnamed-chunk-14](figure/unnamed-chunk-14-2.png) 
+![plot of chunk plot4.png](figure/plot4.png-2.png) 

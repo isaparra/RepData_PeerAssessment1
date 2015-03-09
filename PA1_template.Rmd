@@ -31,7 +31,7 @@ res
 
 To create a png file with the histogram    
 
-```{r}
+```{r,  plot1.png}
 png(filename ="plot1.png")
 hist(res$total_steps,xlab="Total number of steps taken by day",main="Histogram of the steps by day")
 dev.off()
@@ -54,7 +54,7 @@ summarise(days, mean_steps=mean(steps), median_steps=median(steps))
 
 1. Make a time series plot (i.e. type = "l") of the 5-minute interval (x-axis) and the average number of steps taken, averaged across all days (y-axis)
 
-```{r}
+```{r, plot2.png}
 interval<-group_by(df,interval)
 res2<-summarise(interval, mean=mean(steps,na.rm=TRUE))
 res2
@@ -107,7 +107,7 @@ filled
 
 4. Make a histogram of the total number of steps taken each day and Calculate and report the mean and median total number of steps taken per day. Do these values differ from the estimates from the first part of the assignment? What is the impact of imputing missing data on the estimates of the total daily number of steps?
 
-```{r}
+```{r, plot3.png}
 days2<-group_by(filled,date)
 res4<-summarise(days2, total_steps=sum(steps), mean_steps=mean(steps))
 res4
@@ -140,6 +140,9 @@ filled
 interval<-group_by(filled,interval,dayweek)
 res5<-summarise(interval, mean=mean(steps))
 res5
+```
+
+```{r, plot4.png}
 library(lattice)
 png(filename ="plot4.png")
 xyplot(res5$mean ~ res5$interval | res5$dayweek ,layout=c(1,2), type="l", ylab="Number of steps", xlab="Interval")
